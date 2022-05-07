@@ -95,44 +95,7 @@
     <div class="article-content">
         
         <p>using System;<br>using System.Collections.Generic;<br>using System.Linq;<br>using System.Text;<br>using System.Threading.Tasks;<br>class Credit<br>{<br>&#x2F;&#x2F;持有人名<br>public string ownername;<br>&#x2F;&#x2F;信用卡欠款<br>public double balancedue;<br>&#x2F;&#x2F;还款日期<br>public int RepaymentDate;<br>&#x2F;&#x2F;绑定储蓄卡集合<br>public AccountCards Ac;</p>
-<pre><code>public Credit(string ownername, double balancedue, int RepaymentDate, AccountCards Ac)
-&#123;
-    this.ownername = ownername;
-    this.balancedue = balancedue;
-    this.RepaymentDate = RepaymentDate;
-    this.Ac = Ac;
-&#125;
-/// 还款函数
-public void Repayment()
-&#123;
-    for (int i = 0; i &lt; Ac.n; i++)
-    &#123;
-        if (this.Ac.cards[i].getDepositMoney() &gt; this.balancedue)
-        &#123;
-            Console.WriteLine(&quot;今天是&#123;0&#125;&quot;, DateTime.Now);
-            this.Ac.cards[i].setDepositMoney(this.Ac.cards[i].getDepositMoney() - this.balancedue);
-            Console.WriteLine(&quot;用户&#123;0&#125;已还款。&quot;, this.ownername);
-            Console.WriteLine(&quot;还款账户&#123;0&#125;。&quot;, this.Ac.cards[i].owernname);
-            Console.WriteLine(&quot;还款金额&#123;0&#125;。&quot;, this.balancedue);
-            Console.WriteLine(&quot;余下金额&#123;0&#125;。&quot;, this.Ac.cards[i].getDepositMoney());
-            Console.WriteLine();
-            return;
-        &#125;
-    &#125;
-    Console.WriteLine(&quot;今天是&#123;0&#125;&quot;, DateTime.Now);
-    Console.WriteLine(&quot;还款人&#123;0&#125;&quot;, this.ownername);
-    Console.WriteLine(&quot;还款金额&#123;0&#125;。&quot;, this.balancedue);
-    Console.WriteLine(&quot;账户余额不足, 请即时充值。&quot;);
-    return;
-&#125;
-/// 无需还款函数
-public void Norepaym()
-&#123;
-    Console.WriteLine(&quot;今天是&#123;0&#125;。&quot;, DateTime.Now);
-    Console.WriteLine(&quot;用户&#123;0&#125;未到还款日期，无需还款&quot;, this.ownername);
-    Console.WriteLine();
-&#125;
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Credit</span><span class="params">(string ownername, <span class="type">double</span> balancedue, <span class="type">int</span> RepaymentDate, AccountCards Ac)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">this</span>.ownername = ownername;</span><br><span class="line">    <span class="built_in">this</span>.balancedue = balancedue;</span><br><span class="line">    <span class="built_in">this</span>.RepaymentDate = RepaymentDate;</span><br><span class="line">    <span class="built_in">this</span>.Ac = Ac;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/// 还款函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Repayment</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; Ac.n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.Ac.cards[i].getDepositMoney() &gt; <span class="built_in">this</span>.balancedue)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;今天是&#123;0&#125;&quot;</span>, DateTime.Now);</span><br><span class="line">            <span class="built_in">this</span>.Ac.cards[i].setDepositMoney(<span class="built_in">this</span>.Ac.cards[i].getDepositMoney() - <span class="built_in">this</span>.balancedue);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;用户&#123;0&#125;已还款。&quot;</span>, <span class="built_in">this</span>.ownername);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;还款账户&#123;0&#125;。&quot;</span>, <span class="built_in">this</span>.Ac.cards[i].owernname);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;还款金额&#123;0&#125;。&quot;</span>, <span class="built_in">this</span>.balancedue);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;余下金额&#123;0&#125;。&quot;</span>, <span class="built_in">this</span>.Ac.cards[i].getDepositMoney());</span><br><span class="line">            Console.WriteLine();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;今天是&#123;0&#125;&quot;</span>, DateTime.Now);</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;还款人&#123;0&#125;&quot;</span>, <span class="built_in">this</span>.ownername);</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;还款金额&#123;0&#125;。&quot;</span>, <span class="built_in">this</span>.balancedue);</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;账户余额不足, 请即时充值。&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/// 无需还款函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Norepaym</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;今天是&#123;0&#125;。&quot;</span>, DateTime.Now);</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;用户&#123;0&#125;未到还款日期，无需还款&quot;</span>, <span class="built_in">this</span>.ownername);</span><br><span class="line">    Console.WriteLine();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>}<br>&#x2F;&#x2F;&#x2F; 储蓄卡类<br>public class Account<br>{<br>public string owernname;<br>private double money;<br>public Account(string owernname, double money)<br>{<br>this.owernname &#x3D; owernname;<br>this.money &#x3D; money;<br>}<br>public Account()<br>{<br>}<br>&#x2F;&#x2F;&#x2F; 获取余额<br>public double getDepositMoney()<br>{<br>return this.money;<br>}<br>&#x2F;&#x2F;&#x2F; 设置余额<br>public void setDepositMoney(double r)<br>{<br>this.money &#x3D; r;<br>}<br>}</p>
 <p>&#x2F;&#x2F;&#x2F; 储蓄卡集合类<br>public class AccountCards<br>{<br>public Account[] cards;<br>public int n;<br>public AccountCards(Account[] cards, int n)<br>{<br>this.n &#x3D; n;<br>this.cards &#x3D; cards;<br>}<br>}<br>&#x2F;&#x2F;&#x2F; 扣款委托类<br>public class RepayDelegate<br>{<br>&#x2F;&#x2F;&#x2F; 扣款委托<br>public delegate void RepayMoney();<br>public event RepayMoney Dorepay;<br>&#x2F;&#x2F;&#x2F; 执行事件<br>public void NotifyRepay()<br>{<br>if (Dorepay !&#x3D; null)<br>{<br>Dorepay();<br>}<br>}<br>}</p>
 <p>namespace cprojeket<br>{<br>class main<br>{<br>static void Main(string[] args)<br>{<br>&#x2F;&#x2F;银行还款<br>&#x2F;&#x2F;1.创建储蓄卡集合<br>Account A1 &#x3D; new Account(“邮政银行”, 10000);<br>Account A2 &#x3D; new Account(“农业银行”, 20000);<br>Account[] Dc &#x3D; { A1, A2 };<br>AccountCards cards &#x3D; new AccountCards(Dc, 2);</p>
@@ -163,7 +126,7 @@ public void Norepaym()
     &#125;
 &#125;
 </code></pre>
-<p>}<br><img src="/img.png" alt="img.png"></p>
+<p>}<br><img src="/2022/05/07/homework2/img.png" alt="img.png"></p>
 <p>仓库地址：<br><a target="_blank" rel="noopener" href="https://github.com/deng2281/codenotes">https://github.com/deng2281/codenotes</a></p>
 
         
