@@ -81,6 +81,75 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2022/05/26/homework3/" title="windows程序设计作业三" itemprop="url">windows程序设计作业三</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2022-05-26T12:38:43.000Z" itemprop="datePublished"> Published 2022-05-26</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>核心代码：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"><span class="keyword">using</span> MySql.Data.MySqlClient;</span><br><span class="line"><span class="keyword">namespace</span> <span class="title">WindowsFormsAppMysql</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Form1</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> MySqlConnectionStringBuilder builder = <span class="keyword">new</span> MySqlConnectionStringBuilder();</span><br><span class="line">        <span class="keyword">private</span> MySqlConnection connection;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Form1</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            builder.UserID = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">            builder.Password = <span class="string">&quot;55555&quot;</span>;</span><br><span class="line">            builder.Server = <span class="string">&quot;localhost&quot;</span>;</span><br><span class="line">            builder.Database = <span class="string">&quot;exam&quot;</span>;</span><br><span class="line">            connection = <span class="keyword">new</span> MySqlConnection(builder.ConnectionString);</span><br><span class="line">            connection.Open();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button2_Click</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> sql = <span class="string">&quot;select * from student&quot;</span>;</span><br><span class="line">            MySqlCommand cmd = <span class="keyword">new</span> MySqlCommand(sql, connection);</span><br><span class="line">            MySqlDataReader reader = cmd.ExecuteReader();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//设置dataGridView的列</span></span><br><span class="line">            dataGridView1.ColumnCount = <span class="number">3</span>;</span><br><span class="line">            dataGridView1.ColumnHeadersVisible = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            dataGridView1.Columns[<span class="number">0</span>].Name = <span class="string">&quot;编号&quot;</span>;</span><br><span class="line">            dataGridView1.Columns[<span class="number">1</span>].Name = <span class="string">&quot;姓名&quot;</span>;</span><br><span class="line">            dataGridView1.Columns[<span class="number">2</span>].Name = <span class="string">&quot;生日&quot;</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//根据查询结果像DataGridView中添加数据行</span></span><br><span class="line">            <span class="keyword">while</span> (reader.Read())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">int</span> index = <span class="keyword">this</span>.dataGridView1.Rows.Add();</span><br><span class="line">                <span class="keyword">this</span>.dataGridView1.Rows[index].Cells[<span class="number">0</span>].Value = reader.GetString(<span class="string">&quot;s_id&quot;</span>);</span><br><span class="line">                <span class="keyword">this</span>.dataGridView1.Rows[index].Cells[<span class="number">1</span>].Value = reader.GetString(<span class="string">&quot;s_name&quot;</span>);</span><br><span class="line">                <span class="keyword">this</span>.dataGridView1.Rows[index].Cells[<span class="number">2</span>].Value = reader.GetString(<span class="string">&quot;s_birth&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            connection.Close();     <span class="comment">//关闭连接</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button3_Click</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> sql = <span class="string">&quot;insert into student values (&quot;</span> +<span class="string">&quot;&#x27;&quot;</span> + textBox1.Text + <span class="string">&quot;&#x27;,&#x27;&quot;</span> + textBox2.Text + <span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,&#x27;&quot;</span> + textBox3.Text + <span class="string">&quot;&#x27;)&quot;</span>;</span><br><span class="line">            textBox4.Text = sql;</span><br><span class="line">            MySqlCommand cmd = <span class="keyword">new</span> MySqlCommand(sql, connection);</span><br><span class="line">            cmd.ExecuteNonQuery();</span><br><span class="line">            connection.Close();     <span class="comment">//关闭连接</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button4_Click</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//字段为字符窜时要加上单引号 &#x27;&#x27;</span></span><br><span class="line">            <span class="built_in">string</span> sql = <span class="string">&quot;delete from student where s_id=&quot;</span> + textBox1.Text;</span><br><span class="line">            textBox4.Text = sql;</span><br><span class="line">            MySqlCommand cmd = <span class="keyword">new</span> MySqlCommand(sql, connection);</span><br><span class="line">            cmd.ExecuteNonQuery();</span><br><span class="line">            connection.Close();     <span class="comment">//关闭连接</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button5_Click</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> sql = <span class="string">&quot;update student set s_name=&quot;</span> + <span class="string">&quot;&#x27;&quot;</span> + textBox2.Text + <span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,s_birth=&#x27;&quot;</span> + textBox3.Text +<span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot; where s_id=&quot;</span> + <span class="string">&quot;&#x27;&quot;</span>+textBox1.Text+<span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">            textBox4.Text = sql;</span><br><span class="line">            MySqlCommand cmd = <span class="keyword">new</span> MySqlCommand(sql, connection);</span><br><span class="line">            cmd.ExecuteNonQuery();</span><br><span class="line">            connection.Close();     <span class="comment">//关闭连接</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">label3_Click</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>查询表格操作：<br><img src="/2022/05/26/homework3/image-20220526204011365.png" alt="image-20220526204011365"></p>
+<p>增加元组操作：</p>
+<p><img src="/2022/05/26/homework3/image-20220526204227213.png" alt="image-20220526204227213"></p>
+<p>修改元组操作：</p>
+<p><img src="/2022/05/26/homework3/image-20220526204400140.png" alt="image-20220526204400140"></p>
+<p><img src="/2022/05/26/homework3/image-20220526204426158.png" alt="image-20220526204426158"></p>
+<p>删除元组操作：</p>
+<p><img src="/2022/05/26/homework3/image-20220526204506804.png" alt="image-20220526204506804"></p>
+<p>实验小结：</p>
+<p>在实验开始我遇到了连接不了mysql数据库的问题，后来在csdn上寻找解决方案，我尝试过下载一些驱动，但是最后并没有解决问题，最终在同学的帮助下找到了一个简单的解决方案。在vs的工具栏NuGet包管理器中，下载一个mysql.data的包成功的解决了问题，但是这个方法的问题是，每个要用到mysql数据库的项目都需要下载这个的包，比较费力，但在目前来看是解决问题的方法。通过此次实验我学习了使用c#连接数据库进行简单的crud操作，虽然遇到了不少细节上的错误，像把表名搞成了数据库名，属性类型不对或者属性名不对等，但是最后都一一排除了。</p>
+<p>仓库地址：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/deng2281/WindowsFormsAppMysql">https://github.com/deng2281/WindowsFormsAppMysql</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/学习/">学习</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2022/05/09/homework2/" title="windows程序设计作业二" itemprop="url">windows程序设计作业二</a>
   </h1>
   <p class="article-author">By
@@ -290,7 +359,7 @@ public void Norepaym()
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/学习/" title="学习">学习<sup>2</sup></a></li>
+				<li><a href="/tags/学习/" title="学习">学习<sup>3</sup></a></li>
 			
 		
 		</ul>
